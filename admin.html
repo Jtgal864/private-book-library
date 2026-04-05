@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/home.html">Home</a>
+            <a href="/books.html">Browse Books</a>
+            <a href="/admin.html">Admin</a>
+        </nav>
+    </header>
+
+
+    <div class="container">
+        <h1>Admin Panel</h1>
+
+        <div id="loginSection" class="login-box">
+            <h2>Admin Login</h2>
+            <input type="password" id="adminPassword" placeholder="Enter admin password">
+            <button id="loginBtn">Login</button>
+            <p id="loginMsg"></p>
+        </div>
+        
+        <div id="adminSection" style="display:none;">
+            <div class="form-box">
+                <h2>Add Book</h2>
+                <form id="bookForm" enctype="multipart/form-data">
+                    <input type="text" name="title" placeholder="Title" required>
+                    <input type="text" name="author" placeholder="Author" required>
+                    <input type="text" name="genre" placeholder="Genre">
+                    <textarea name="description" placeholder="Description"></textarea>
+                    <label>Cover Image</label>
+                    <input type="file" name="cover" accept="image/*">
+                    <label>Book File (PDF/EPUB/etc.)</label>
+                    <input type="file" name="bookFile">
+                    <button type="submit">Add Book</button>
+                </form>
+                <p id="bookMsg"></p>
+            </div>
+
+            <div class="form-box">
+                <h2>Manage Books</h2>
+                <div id="adminBookList"></div>
+                <button id="logoutBtn" class="smallBtn">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/admin.js"></script>
+</body>
+</html>
